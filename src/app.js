@@ -1,6 +1,7 @@
 import express from "express";
 import productRouter from "./routes/product.routes.js";
 import categoryRouter from "./routes/category.routes.js";
+import authRouter from "./routes/auth.routes.js";
 import "./config/db.js";
 
 // 1. Importamos nuestro manejador global
@@ -20,6 +21,7 @@ app.get('/', (req, res) => {
   });
 })
 
+app.use("/auth", authRouter);
 app.use("/products", productRouter);
 app.use("/categories", categoryRouter);
 
