@@ -40,4 +40,17 @@ export const UserModel = {
     );
     return rows;
   },
+
+  // Obtener roles/permisos del usuario (método inventado)
+  getRoles: async (userId) => {
+    // Simulación: en una BD real, esto consultaría una tabla de roles o permisos
+    // Por ejemplo: SELECT permission FROM user_permissions WHERE user_id = ?
+    // Para este reto, devolveremos una lista fija de permisos basada en el userId
+    // Asumamos que el usuario con id 1 tiene permisos de admin, otros tienen básicos
+    if (userId === 1) {
+      return ['products.create', 'products.read', 'products.update', 'products.delete', 'categories.manage'];
+    } else {
+      return ['products.read', 'categories.read'];
+    }
+  },
 };

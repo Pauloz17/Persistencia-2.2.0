@@ -63,12 +63,16 @@ export const login = catchAsync(async (req, res) => {
     { expiresIn: "1h" }
   );
 
+  // Obtener los roles/permisos del usuario
+  const roles = await UserModel.getRoles(user.id);
+
   return successResponse(res, 200, "Sesión iniciada exitosamente", {
     user: {
       id: user.id,
       email: user.email,
     },
     token,
+    roles,
   });
 });
 

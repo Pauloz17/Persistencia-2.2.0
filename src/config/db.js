@@ -1,6 +1,6 @@
 // Importamos la versión de promesas de mysql2
-import mysql from "mysql2/promise";
-// Cargamos las variables de entorno
+import mysql from "mysql2/promise"; 
+// Cargamos las variables de entorno 
 import "dotenv/config";
 
 // Creamos un "Pool" de conexiones.
